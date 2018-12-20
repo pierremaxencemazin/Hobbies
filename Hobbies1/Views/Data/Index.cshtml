@@ -1,4 +1,14 @@
-﻿@using (Html.BeginForm("Index","Data",FormMethod.Post,new { style="margin-left:10px;"}))
+﻿@{
+    List<string> liste = new List<string>();
+    liste.Add("Veuf");
+    liste.Add("Marié(e)");
+    liste.Add("Célibataire");
+    liste.Add("Compliqué");
+
+}
+
+
+@using (Html.BeginForm("Index", "Data", FormMethod.Post, new { style = "margin-left:10px;" }))
 {
     <container style="margin-left:10px;">
         <div class="row">
@@ -17,11 +27,11 @@
         <div class="row">
             <div class="col col-1">
                 @Html.Label("firstName", "Prénom")
-                
+
             </div>
             <div class="col col-1">
                 @Html.TextBox("firstName", "")
-                
+
             </div>
         </div>
         <div class="row">
@@ -30,6 +40,43 @@
             </div>
             <div class="col col-1">
                 @Html.TextBox("lastName", "")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-1">
+                @Html.Label("liste", "Statut marital")
+            </div>
+            <div class="col col-1">
+                @Html.DropDownList("liste", new SelectList(liste))
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-1">
+                @Html.Label("userName", "Login")
+            </div>
+            <div class="col col-1">
+                @Html.TextBox("userName", "")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-1">
+                @Html.Label("password", "Mot de passe")
+            </div>
+            <div class="col col-1">
+                @Html.Password("password", "")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-1">
+                @Html.Label("date", "Date de naissance")
+            </div>
+            <div class="col col-1">
+               <input id="date" type="date" style="width:168px;" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-1">
+                <button type="submit">Valider</button>
             </div>
         </div>
     </container>
