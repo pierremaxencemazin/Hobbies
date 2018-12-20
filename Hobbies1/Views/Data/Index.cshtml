@@ -10,8 +10,10 @@
 
 @using (Html.BeginForm("Index", "Data", FormMethod.Post, new { style = "margin-left:10px;" }))
 {
-    <container style="margin-left:10px;">
-        <div class="row">
+    @MesHelpers.ShowMessage("Salut!")
+    
+    <container id="test" style="margin-left:10px;">
+        <div class="row justify-content-center">
 
             <div class="col col-1">
                 @Html.Label("m", "Homme")
@@ -24,7 +26,7 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("firstName", "Prénom")
 
@@ -34,7 +36,7 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("lastName", "Nom")
             </div>
@@ -42,7 +44,7 @@
                 @Html.TextBox("lastName", "")
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("liste", "Statut marital")
             </div>
@@ -50,7 +52,7 @@
                 @Html.DropDownList("liste", new SelectList(liste))
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("userName", "Login")
             </div>
@@ -58,7 +60,7 @@
                 @Html.TextBox("userName", "")
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("password", "Mot de passe")
             </div>
@@ -66,7 +68,7 @@
                 @Html.Password("password", "")
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 @Html.Label("date", "Date de naissance")
             </div>
@@ -74,10 +76,11 @@
                <input id="date" type="date" style="width:168px;" />
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col col-1">
                 <button type="submit">Valider</button>
             </div>
         </div>
+       
     </container>
 }
